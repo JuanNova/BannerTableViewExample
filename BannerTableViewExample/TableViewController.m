@@ -19,7 +19,8 @@
 #import "MenuItem.h"
 #import "MenuItemTableViewCell.h"
 
-static NSString *const GADAdUnitID = @"ca-app-pub-3940256099942544/2934735716";
+static NSString *const GADAdUnitID = @"/5555/LIBERTADDIGITAL.ES/app_ios_esradio";
+//static NSString *const GADAdUnitID = @"ca-app-pub-3940256099942544/2934735716";
 static const CGFloat GADAdViewHeight = 100;
 
 @interface TableViewController () <GADBannerViewDelegate> {

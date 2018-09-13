@@ -21,7 +21,7 @@
 
 static NSString *const GADAdUnitID = @"/5555/LIBERTADDIGITAL.ES/app_ios_esradio";
 //static NSString *const GADAdUnitID = @"ca-app-pub-3940256099942544/2934735716";
-static const CGFloat GADAdViewHeight = 100;
+//static const CGFloat GADAdViewHeight = 250;
 
 @interface TableViewController () <GADBannerViewDelegate> {
   /// UITableView source items.
@@ -83,7 +83,7 @@ static const CGFloat GADAdViewHeight = 100;
   if ([_tableViewItems[indexPath.row] isKindOfClass:[GADBannerView class]]) {
     GADBannerView *adView = _tableViewItems[indexPath.row];
     BOOL isLoaded = [_loadStateForAds[[self referenceKeyForAdView:adView]] boolValue];
-    return isLoaded ? GADAdViewHeight : 0;
+    return isLoaded ? kGADAdSizeMediumRectangle.size.height : 0;
   }
 
   return UITableViewAutomaticDimension;
@@ -148,8 +148,7 @@ static const CGFloat GADAdViewHeight = 100;
 
   while (index < _tableViewItems.count) {
     GADBannerView *adView = [[GADBannerView alloc]
-        initWithAdSize:GADAdSizeFromCGSize(
-                           CGSizeMake(self.tableView.contentSize.width, GADAdViewHeight))];
+        initWithAdSize:kGADAdSizeMediumRectangle];
     adView.adUnitID = GADAdUnitID;
     adView.rootViewController = self;
     adView.delegate = self;
